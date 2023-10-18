@@ -4,6 +4,21 @@ public class Line {
 	private Point startPoint; //tip podatka je Point. startPoint je zapravo objekat klase Point sa svim pripadajucim obelezjima koja su definisana!!!
 	private Point endPoint;
 	private boolean selected;
+	
+	
+	public Line() {
+
+	}
+
+	public Line(Point startPoint, Point endPoint) {
+		this.startPoint = startPoint; 
+		this.endPoint = endPoint;
+	}
+
+	public Line(Point startPoint, Point endPoint, boolean selected) {
+		this(startPoint, endPoint);
+		this.selected = selected;
+	}
 
 	// U okviru ove metode se poziva metoda distance iz klase Point
 	// pozivamo metodu distance jer je vec kreirana, i samim tim koristimo vec nesto
@@ -11,6 +26,20 @@ public class Line {
 	public double length() {
 		return startPoint.distance(endPoint.getX(), endPoint.getY());
 	}
+	
+	public boolean equals(Object obj) {
+		if (obj instanceof Line) {
+
+			Line pomocna = (Line)obj;
+			if (pomocna.startPoint.equals(this.startPoint) && pomocna.endPoint.equals(this.endPoint)) {
+				return true;
+			} else
+				return false;
+
+		} else 
+			return false;
+	}
+	
 
 	// Metode pristupa (GET i SET)
 	public Point getStartPoint() {

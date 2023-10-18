@@ -5,6 +5,21 @@ public class Rectangle {
 	private int width;
 	private int height;
 	private boolean selected;
+	
+	public Rectangle() {
+
+	}
+
+	public Rectangle(Point upperLeftPoint, int width, int height) {
+		this.upperLeftPoint = upperLeftPoint;
+		this.width = width; 
+		this.height = height;
+	}
+
+	public Rectangle(Point upperLeftPoint, int width, int height, boolean selected) {
+		this(upperLeftPoint, width, height); 
+		this.selected = selected;
+	}
 
 	// Povrsina pravougaonika P=w*h
 	public int area() {
@@ -14,6 +29,19 @@ public class Rectangle {
 	// Obim pravougaonika
 	public int circumference() {
 		return 2 * (width + height);
+	}
+	
+	public boolean equals(Object obj) {
+		if (obj instanceof Rectangle) {
+			Rectangle pomocna = (Rectangle) obj;
+			if (this.upperLeftPoint.equals(pomocna.upperLeftPoint) && this.width == pomocna.width
+					&& this.height == pomocna.height)
+				return true;
+			else 
+				return false;
+		} else 
+			return false;
+
 	}
 
 	// Metode pristupa

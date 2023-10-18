@@ -91,6 +91,17 @@ public class Test {
 		c1.getCenter().setX(r1.area() - l1.getStartPoint().getY());
 		System.out.println("X coord of center of circle c1: " + c1.getCenter().getX());
 		System.out.println("Y coord of center of circle c1: " + c1.getCenter().getY());
+		
+		
+		String s1  = new String("Hello");
+		String s2  = new String("Hello");
+		System.out.println(s1 == s2);   // poredjenje po referenci
+		System.out.println(s1.equals(s2)); // poredjenje po vrednosti
+
+		Point p3 = new Point(23,5);
+		Point p4 = new Point(23,5);
+		System.out.println(p4 == p3);
+		System.out.println(p4.equals(p3));
 	}
 
 }
