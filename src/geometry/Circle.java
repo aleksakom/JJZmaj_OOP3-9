@@ -1,6 +1,8 @@
 package geometry;
 
-public class Circle {
+import java.awt.Graphics;
+
+public class Circle extends Shape{
 	private Point center;
 	private int radius;
 	private boolean selected;
@@ -65,5 +67,15 @@ public class Circle {
 
 	public void setSelected(boolean selected) {
 		this.selected = selected;
+	}
+
+	public boolean contains(int x, int y) {
+		return (center.distance(x,y) <= radius);
+	}
+
+	@Override
+	public void draw(Graphics g) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -1,6 +1,8 @@
 package geometry;
 
-public class Rectangle {
+import java.awt.Graphics;
+
+public class Rectangle extends Shape{
 	private Point upperLeftPoint; //uociti tip podatka!!!
 	private int width;
 	private int height;
@@ -75,6 +77,17 @@ public class Rectangle {
 
 	public void setSelected(boolean selected) {
 		this.selected = selected;
+	}
+
+	public boolean contains(int x, int y) {
+		return (x >= upperLeftPoint.getX() && x <= upperLeftPoint.getX() + width 
+				&& y >= upperLeftPoint.getY() && y <= upperLeftPoint.getY() + height);
+	}
+
+	@Override
+	public void draw(Graphics g) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

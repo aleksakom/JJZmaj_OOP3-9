@@ -1,6 +1,8 @@
 package geometry;
 
-public class Line {
+import java.awt.Graphics;
+
+public class Line extends Shape {
 	private Point startPoint; //tip podatka je Point. startPoint je zapravo objekat klase Point sa svim pripadajucim obelezjima koja su definisana!!!
 	private Point endPoint;
 	private boolean selected;
@@ -64,6 +66,16 @@ public class Line {
 
 	public void setSelected(boolean selected) {
 		this.selected = selected;
+	}
+	
+	public boolean contains(int x, int y) {
+		return startPoint.distance(x,y) + endPoint.distance(x,y) - length() <= 2;
+	}
+
+	@Override
+	public void draw(Graphics g) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
