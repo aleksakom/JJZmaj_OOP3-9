@@ -78,4 +78,16 @@ public class Circle extends Shape{
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void moveTo(int x, int y) {
+		this.center.moveTo(x,y);
+
+	}
+
+	@Override
+	public void moveBy(int byX, int byY) {
+		this.center.moveBy(byX,byY);
+
+	}
 }

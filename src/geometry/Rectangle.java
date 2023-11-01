@@ -90,4 +90,16 @@ public class Rectangle extends Shape{
 		
 	}
 
+	@Override
+	public void moveTo(int x, int y) {
+		this.upperLeftPoint.moveTo(x,y);
+
+	}
+
+	@Override
+	public void moveBy(int byX, int byY) {
+		this.upperLeftPoint.moveBy(byX,byY);
+
+	}
+
 }

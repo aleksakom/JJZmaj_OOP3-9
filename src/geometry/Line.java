@@ -78,4 +78,18 @@ public class Line extends Shape {
 		
 	}
 
+	@Override
+	public void moveTo(int x, int y) {
+		this.startPoint.moveTo(x,y);
+
+	}
+
+	@Override
+	public void moveBy(int byX, int byY) {
+		this.startPoint.moveBy(byX,byY);
+		this.endPoint.moveBy(byX,byY);
+
+	}
+
+
 }
